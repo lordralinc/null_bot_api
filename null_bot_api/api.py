@@ -70,7 +70,7 @@ class NullBotAPI(NullBotAPIABC, APICategories):
 
         request_url = self.URL.format(method=method)
         logger.debug(
-            f"Make post request to {request_url} with data {self.data_to_print(data)}. Timeout {self.timeout}"
+            f"Make GET request to {request_url} with data {self.data_to_print(data)}. Timeout {self.timeout}"
         )
         response = requests.get(request_url + self.prepare_data(data), timeout=self.timeout)
         response.raise_for_status()
@@ -90,7 +90,7 @@ class NullBotAPI(NullBotAPIABC, APICategories):
 
         request_url = self.URL.format(method=method)
         logger.debug(
-            f"Make async post request to {request_url} with data {self.data_to_print(data)}. Timeout {self.timeout}"
+            f"Make async GET request to {request_url} with data {self.data_to_print(data)}. Timeout {self.timeout}"
         )
         async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=self.timeout)) as session:
             async with session.get(request_url + self.prepare_data(data)) as response:

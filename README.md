@@ -1,4 +1,4 @@
-# NULL BOT API wrapper [В РАЗРАБОТКЕ]
+# NULL BOT API wrapper
 
 
 
@@ -24,6 +24,7 @@ from null_bot_api import NullBotApi
 
 api = NullBotApi()
 
+stickers = api.users.get_stickers()
 
 custom = api.make_request(
     "section.method", 
@@ -38,6 +39,7 @@ from null_bot_api import NullBotApi
 
 api = NullBotApi()
 
+stickers = await api.users.get_stickers_async()
 
 custom = api.make_request_async(
     "section.method", 
@@ -47,6 +49,5 @@ custom = api.make_request_async(
 ```
 
 ## Методы
-
-| Секция  | Метод               | Параметры                                            | Описание                                              |
-|---------|---------------------|------------------------------------------------------|-------------------------------------------------------|
+Методы предоставлены на [странице](https://vk.com/@null_bot-api).
+Все методы следует преводить в snake_case.
